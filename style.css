@@ -1,0 +1,117 @@
+/* style.css */
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #d1d5db; /* gray-300 */
+    border-radius: 4px;
+}
+.dark ::-webkit-scrollbar-thumb {
+    background: #4b5563; /* gray-600 */
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af; /* gray-400 */
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #6b7280; /* gray-500 */
+}
+
+/* SVG Logo Styling */
+.navbar-logo svg, .footer-logo svg {
+    width: auto;
+    transition: transform 0.2s ease-out;
+    display: block;
+}
+.navbar-logo svg { height: 28px; }
+.footer-logo svg { height: 32px; }
+.navbar-logo:hover svg { transform: scale(1.03); }
+
+/* Sticky Header Background Change */
+.header-scrolled {
+    background-color: rgba(255, 255, 255, 0.85) !important; /* White with opacity */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+}
+.dark .header-scrolled {
+    background-color: rgba(17, 24, 39, 0.85) !important; /* Gray-900 with opacity */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+/* Language Selector Dropdown */
+.language-dropdown {
+    position: relative;
+}
+.language-dropdown-content {
+    display: none; /* Initially hidden, JS will toggle with 'active' class */
+    position: absolute;
+    right: 0;
+    top: calc(100% + 0.5rem);
+    background-color: #fff;
+    min-width: 170px; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 10;
+    border-radius: 0.375rem; 
+    padding-top: 0.25rem; 
+    padding-bottom: 0.25rem;
+}
+.language-dropdown-content.active { /* JS toggles this class */
+    display: block;
+}
+.dark .language-dropdown-content {
+    background-color: #1f2937; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.language-dropdown-content a {
+    color: #374151; 
+    padding: 0.5rem 1rem; 
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem; 
+}
+.dark .language-dropdown-content a {
+    color: #d1d5db; 
+}
+.language-dropdown-content a:hover {
+    background-color: #f3f4f6; 
+}
+.dark .language-dropdown-content a:hover {
+    background-color: #374151; 
+}
+.language-dropdown-content img {
+    width: 20px;
+    height: 15px;
+    margin-right: 0.75rem; 
+    border-radius: 2px;
+    object-fit: cover;
+    border: 1px solid #e5e7eb; 
+}
+.dark .language-dropdown-content img {
+    border-color: #4b5563; 
+}
+#selectedLanguageFlag {
+    width: 20px;
+    height: 15px;
+    border-radius: 2px;
+    object-fit: cover;
+    border: 1px solid #e5e7eb;
+}
+.dark #selectedLanguageFlag {
+    border-color: #4b5563;
+}
+
+/* Tailwind uses utility classes, so most styling is in the HTML.
+   This file is for custom styles that are harder to achieve with Tailwind alone
+   or for overrides if absolutely necessary. */
